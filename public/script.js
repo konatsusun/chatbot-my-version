@@ -27,7 +27,7 @@ function goBackAuto() {
   }
 }
 
-// 🩺 順番予約チェック → 結果表示へ（改良版）
+// 🩺 順番予約チェック → 結果表示へ（予約あり／なし）
 function showResult(type) {
   const resultText = document.getElementById("resultText");
   let html = "";
@@ -55,7 +55,7 @@ function showResult(type) {
   showSection("result");
 }
 
-// 📋 固定選択肢からの案内（旧タイプ）
+// 📋 固定選択肢からの案内
 function showDetail(type) {
   const responses = {
     spots: "【しみ・くすみ】フォトフェイシャルや美白成分の導入がおすすめです。",
@@ -73,18 +73,17 @@ function showDetail(type) {
   showSection("result");
 }
 
-// ✅ biyouData から詳細を直接表示（※構造付きHTMLを反映）
+// ✅ 美容情報オブジェクトから詳細を表示
 function showSummary(type) {
   const item = biyouData[type];
   if (!item) return;
 
   const resultArea = document.getElementById("resultText");
   resultArea.innerHTML = item.detail;
-
   showSection("result");
 }
 
-// 🔁 最初に戻る（状態も初期化）※ resultText 内のボタンもクリア！
+// 🔁 最初に戻る（状態も初期化）
 function resetChat() {
   currentSection = "mainMenu";
   sectionHistory = [currentSection];
