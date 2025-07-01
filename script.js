@@ -30,26 +30,6 @@ function goBackAuto() {
   }
 }
 
-// 🧠 自由入力チャット → 自動返信（AI風）
-function handleInput() {
-  const input = document.getElementById("userInput").value.toLowerCase();
-  let response = "";
-
-  if (input.includes("しみ") || input.includes("美白")) {
-    response = "しみ・美白ケアについてはこちら✨\n→ https://example.com/shimi";
-  } else if (input.includes("脱毛")) {
-    response = "医療脱毛の詳細はこちらです🪒\n→ https://example.com/datsumou";
-  } else if (input.includes("予約")) {
-    response = "ご予約はこちらからどうぞ📅\n→ https://example.com/yoyaku";
-  } else if (input.includes("しわ") || input.includes("たるみ")) {
-    response = "たるみ・エイジングケアについてのご案内はこちらです💡\n→ https://example.com/shiwa";
-  } else {
-    response = "ご質問ありがとうございます！お電話または受付でご案内いたします📞";
-  }
-
-  document.getElementById("resultText").innerText = response;
-  showSection("result");
-}
 
 // 🩺 順番予約チェック → 結果表示へ
 function showResult(type) {
