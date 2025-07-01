@@ -34,8 +34,12 @@
     <!-- 美容皮膚科 -->
     <div class="chat-box" id="biyouhifuka" style="display:none;">
       <p>ご希望の施術をお選びください：</p>
-      <button onclick="openLink('https://example.com/datsumou')">脱毛</button>
-      <button onclick="openLink('https://example.com/shimi')">しみ・美白</button>
+
+      <!-- ✅ 要約＋詳細ボタン -->
+      <button onclick="showSummary('datsumou')">脱毛</button>
+      <button onclick="showSummary('shimi')">しみ・美白</button>
+
+      <!-- 従来の外部リンク -->
       <button onclick="openLink('https://example.com/akaragao')">赤ら顔</button>
       <button onclick="openLink('https://example.com/nikibi')">にきび・にきび跡</button>
       <button onclick="openLink('https://example.com/keana')">毛穴・くすみ</button>
@@ -121,8 +125,9 @@
       <button onclick="goBackAuto()">← 前の画面に戻る</button>
     </div>
   </div> <!-- chat-container -->
-  
+
   <!-- ✅ JavaScriptファイルの読み込み -->
+  <script src="data_biyou.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -30,19 +30,6 @@ function goBackAuto() {
   }
 }
 
-// 🩺 順番予約チェック → 結果表示へ
-function showResult(type) {
-  let text = "";
-  if (type === "yoyaku-ari") {
-    text = "📋順番確認ページへご案内します。\n来院時間をご確認ください。";
-  } else {
-    text = "🕒予約ページへご案内します。\n受付時間内に窓口へお越しください。";
-  }
-
-  document.getElementById("resultText").innerText = text;
-  showSection("result");
-}
-
 // 🧠 自由入力チャット → 自動返信（AI風）
 function handleInput() {
   const input = document.getElementById("userInput").value.toLowerCase();
@@ -64,7 +51,20 @@ function handleInput() {
   showSection("result");
 }
 
-// 📋 固定選択肢からの案内（showDetail用）
+// 🩺 順番予約チェック → 結果表示へ
+function showResult(type) {
+  let text = "";
+  if (type === "yoyaku-ari") {
+    text = "📋順番確認ページへご案内します。\n来院時間をご確認ください。";
+  } else {
+    text = "🕒予約ページへご案内します。\n受付時間内に窓口へお越しください。";
+  }
+
+  document.getElementById("resultText").innerText = text;
+  showSection("result");
+}
+
+// 📋 固定選択肢からの案内（旧タイプ）
 function showDetail(type) {
   const responses = {
     spots: "【しみ・くすみ】フォトフェイシャルや美白成分の導入がおすすめです。",
@@ -80,6 +80,39 @@ function showDetail(type) {
   const text = responses[type] || "ご案内情報が見つかりませんでした。";
   document.getElementById("resultText").innerText = text;
   showSection("result");
+}
+
+// ✅ 追加：biyouData を元に要約→詳細を表示する構成（要 data_biyou.js の読み込み）
+function showSummary(type) {
+  const item = biyouData[type];
+  if (!item) return;
+
+  const resultArea = document.getElementById("resultText");
+  resultArea.innerText = item.summary;
+
+  const moreBtn = document.createElement("button");
+  moreBtn.innerText = "もっと詳しく";
+  moreBtn.onclick = () => showDetailExpanded(type);
+
+  resultArea.appendChild(document.createElement("br"));
+  resultArea.appendChild(moreBtn);
+
+  showSection("result");
+}
+
+function showDetailExpanded(type) {
+  const item = biyouData[type];
+  if (!item) return;
+
+  const resultArea = document.getElementById("resultText");
+  resultArea.innerText = item.detail;
+
+  const backBtn = document.createElement("button");
+  backBtn.innerText = "← 要約にもどる";
+  backBtn.onclick = () => showSummary(type);
+
+  resultArea.appendChild(document.createElement("br"));
+  resultArea.appendChild(backBtn);
 }
 
 // 🔁 最初に戻る（状態も初期化）
