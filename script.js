@@ -1,20 +1,17 @@
-// ✅ 現在と1つ前のセクションを記憶
+// ✅ セクション履歴をスタックで記録（前に戻る操作が可能に）
 let currentSection = "mainMenu";
-let previousSection = "";
+let sectionHistory = [currentSection];
 
-// 🔄 セクションを表示切り替え（履歴を記憶しつつ表示を制御）
+// 🔄 セクションを表示切り替え（履歴をスタックに追加）
 function showSection(id) {
-  const allSections = [
-    "mainMenu", "hifuka", "biyouhifuka", "biyougeka",
-    "skincare", "others", "brandSelect", "purposeSelect", "result"
-  ];
-
   const current = document.getElementById(currentSection);
   const next = document.getElementById(id);
 
   if (current && current !== next) {
-    previousSection = currentSection;
     current.style.display = "none";
+
+    // ✅ 現在のセクションを履歴として積む
+    sectionHistory.push(id);
   }
 
   if (next) {
@@ -23,13 +20,15 @@ function showSection(id) {
   }
 }
 
-// ⬅️ 戻るボタン（ひとつ前のセクションへ）
+// ⬅️ 戻るボタン（履歴から1つ前のセクションへ）
 function goBackAuto() {
-  if (previousSection && previousSection !== currentSection) {
-    showSection(previousSection);
+  if (sectionHistory.length > 1) {
+    // 現在のセクションをpopし、前のセクションを表示
+    sectionHistory.pop(); // 今のページを除外
+    const previousId = sectionHistory[sectionHistory.length - 1];
+    showSection(previousId);
   }
 }
-
 
 // 🩺 順番予約チェック → 結果表示へ
 function showResult(type) {
@@ -76,7 +75,7 @@ function showSummary(type) {
 // 🔁 最初に戻る（状態も初期化）※ resultText 内のボタンもクリア！
 function resetChat() {
   currentSection = "mainMenu";
-  previousSection = "";
+  sectionHistory = [currentSection]; // ✅ 履歴を初期化
 
   // 結果セクションを非表示に
   document.getElementById("result").style.display = "none";
