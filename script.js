@@ -93,13 +93,25 @@ function showSummary(type) {
   showSection("result");
 }
 
-// 🔁 最初に戻る（状態も初期化）
+// 🔁 最初に戻る（状態も初期化）※ resultText 内のボタンもクリア！
 function resetChat() {
   currentSection = "mainMenu";
   previousSection = "";
-  document.getElementById("resultText").innerText = "";
+
+  // 結果セクションを非表示に
+  document.getElementById("result").style.display = "none";
+
+  // テキストと子要素すべてクリア
+  const resultText = document.getElementById("resultText");
+  while (resultText.firstChild) {
+    resultText.removeChild(resultText.firstChild);
+  }
+
+  // 入力欄リセット（もし使っている場合）
   const input = document.getElementById("userInput");
   if (input) input.value = "";
+
+  // 最初のセクションを表示
   showSection("mainMenu");
 }
 
