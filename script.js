@@ -33,7 +33,6 @@ function showResult(type) {
   if (type === "yoyaku-ari") {
     text = "📋順番確認ページへご案内します。\n来院時間をご確認ください。";
   } else {
-    // ✅ DoctorQubeの予約リンクを埋め込む
     text = `🕒まだご予約がお済みでないようですね。<br>ご予約は <a href="https://ssc8.doctorqube.com/takeoka-clinic/" target="_blank">こちら</a> からどうぞ📅`;
   }
 
@@ -55,17 +54,17 @@ function showDetail(type) {
   };
 
   const text = responses[type] || "ご案内情報が見つかりませんでした。";
-  document.getElementById("resultText").innerText = text;
+  document.getElementById("resultText").innerHTML = text; // ✅ innerText → innerHTML に変更
   showSection("result");
 }
 
-// ✅ biyouData から詳細を直接表示（※要約は表示しない）
+// ✅ biyouData から詳細を直接表示（※構造付きHTMLを反映）
 function showSummary(type) {
   const item = biyouData[type];
   if (!item) return;
 
   const resultArea = document.getElementById("resultText");
-  resultArea.innerText = item.detail;
+  resultArea.innerHTML = item.detail; // ✅ innerText → innerHTML に変更
 
   showSection("result");
 }
