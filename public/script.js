@@ -27,16 +27,31 @@ function goBackAuto() {
   }
 }
 
-// 🩺 順番予約チェック → 結果表示へ
+// 🩺 順番予約チェック → 結果表示へ（改良版）
 function showResult(type) {
-  let text = "";
+  const resultText = document.getElementById("resultText");
+  let html = "";
+
   if (type === "yoyaku-ari") {
-    text = "📋順番確認ページへご案内します。\n来院時間をご確認ください。";
-  } else {
-    text = `🕒まだご予約がお済みでないようですね。<br>ご予約は <a href="https://ssc8.doctorqube.com/takeoka-clinic/" target="_blank">こちら</a> からどうぞ📅`;
+    html = "📋順番確認ページへご案内します。<br>来院時間をご確認ください。";
+  } else if (type === "yoyaku-nashi") {
+    html = `
+      <p>
+        当日ご来院の方のみ 
+        <a href="https://ssc8.doctorqube.com/takeoka-clinic/" target="_blank" rel="noopener noreferrer">コチラ</a> 
+        から順番予約を取ることができます。<br>
+        午前 8:30～11:30　／　午後 14:30～17:30<br>
+        （土曜日）午前 8:30～11:30　／　午後 14:30～16:30
+      </p>
+      <p>
+        WEB問診も事前に済まされていると受付がスムーズです。
+        <a href="https://symview.me/medical_interview_flows/takeoka-clinic/public/?url_kind=1" target="_blank" rel="noopener noreferrer">コチラ</a>
+        からお願いいたします。
+      </p>
+    `;
   }
 
-  document.getElementById("resultText").innerHTML = text;
+  resultText.innerHTML = html;
   showSection("result");
 }
 
@@ -54,7 +69,7 @@ function showDetail(type) {
   };
 
   const text = responses[type] || "ご案内情報が見つかりませんでした。";
-  document.getElementById("resultText").innerHTML = text; // ✅ innerText → innerHTML に変更
+  document.getElementById("resultText").innerHTML = text;
   showSection("result");
 }
 
@@ -64,7 +79,7 @@ function showSummary(type) {
   if (!item) return;
 
   const resultArea = document.getElementById("resultText");
-  resultArea.innerHTML = item.detail; // ✅ innerText → innerHTML に変更
+  resultArea.innerHTML = item.detail;
 
   showSection("result");
 }
