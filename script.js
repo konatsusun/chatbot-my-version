@@ -82,37 +82,15 @@ function showDetail(type) {
   showSection("result");
 }
 
-// ✅ 追加：biyouData を元に要約→詳細を表示する構成（要 data_biyou.js の読み込み）
+// ✅ biyouData から詳細を直接表示（※要約は表示しない）
 function showSummary(type) {
-  const item = biyouData[type];
-  if (!item) return;
-
-  const resultArea = document.getElementById("resultText");
-  resultArea.innerText = item.summary;
-
-  const moreBtn = document.createElement("button");
-  moreBtn.innerText = "もっと詳しく";
-  moreBtn.onclick = () => showDetailExpanded(type);
-
-  resultArea.appendChild(document.createElement("br"));
-  resultArea.appendChild(moreBtn);
-
-  showSection("result");
-}
-
-function showDetailExpanded(type) {
   const item = biyouData[type];
   if (!item) return;
 
   const resultArea = document.getElementById("resultText");
   resultArea.innerText = item.detail;
 
-  const backBtn = document.createElement("button");
-  backBtn.innerText = "← 要約にもどる";
-  backBtn.onclick = () => showSummary(type);
-
-  resultArea.appendChild(document.createElement("br"));
-  resultArea.appendChild(backBtn);
+  showSection("result");
 }
 
 // 🔁 最初に戻る（状態も初期化）
