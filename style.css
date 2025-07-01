@@ -61,3 +61,84 @@ button:hover {
   border-radius: 12px;
   max-width: 80%;
 }
+
+/* 脱毛のところのCSS追記分 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+/* ▼ セクション見出しを強調表示（h3, h4） */
+#resultText h3 {
+  font-size: 1.2rem;
+  background-color: #e6f4ff;
+  padding: 10px 14px;
+  margin-top: 20px;
+  border-left: 5px solid #0099cc;
+  color: #003b5c;
+}
+
+#resultText h4 {
+  font-size: 1rem;
+  margin-top: 16px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 4px;
+  color: #004466;
+}
+
+/* ▼ 通常段落の余白と見やすさ調整 */
+#resultText p {
+  margin: 10px 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* ▼ 小さな補足文字用 */
+#resultText small {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* ▼ 箇条書きの装飾 */
+#resultText ul {
+  margin: 8px 0 12px 16px;
+  padding-left: 10px;
+  list-style: disc;
+}
+
+#resultText ul li {
+  margin: 4px 0;
+}
+
+/* ▼ テーブル装飾（剃毛代など） */
+#resultText table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 0.9rem;
+}
+
+#resultText th,
+#resultText td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+#resultText th {
+  background-color: #f0f8ff;
+  color: #003b5c;
+  font-weight: bold;
+}
