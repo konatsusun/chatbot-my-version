@@ -9,9 +9,7 @@ function showSection(id) {
 
   if (current && current !== next) {
     current.style.display = "none";
-
-    // ✅ 現在のセクションを履歴として積む
-    sectionHistory.push(id);
+    sectionHistory.push(id); // 履歴を追加
   }
 
   if (next) {
@@ -23,8 +21,7 @@ function showSection(id) {
 // ⬅️ 戻るボタン（履歴から1つ前のセクションへ）
 function goBackAuto() {
   if (sectionHistory.length > 1) {
-    // 現在のセクションをpopし、前のセクションを表示
-    sectionHistory.pop(); // 今のページを除外
+    sectionHistory.pop(); // 今の画面を除外
     const previousId = sectionHistory[sectionHistory.length - 1];
     showSection(previousId);
   }
@@ -36,10 +33,11 @@ function showResult(type) {
   if (type === "yoyaku-ari") {
     text = "📋順番確認ページへご案内します。\n来院時間をご確認ください。";
   } else {
-    text = "🕒予約ページへご案内します。\n受付時間内に窓口へお越しください。";
+    // ✅ DoctorQubeの予約リンクを埋め込む
+    text = `🕒まだご予約がお済みでないようですね。<br>ご予約は <a href="https://ssc8.doctorqube.com/takeoka-clinic/" target="_blank">こちら</a> からどうぞ📅`;
   }
 
-  document.getElementById("resultText").innerText = text;
+  document.getElementById("resultText").innerHTML = text;
   showSection("result");
 }
 
@@ -75,22 +73,18 @@ function showSummary(type) {
 // 🔁 最初に戻る（状態も初期化）※ resultText 内のボタンもクリア！
 function resetChat() {
   currentSection = "mainMenu";
-  sectionHistory = [currentSection]; // ✅ 履歴を初期化
+  sectionHistory = [currentSection];
 
-  // 結果セクションを非表示に
   document.getElementById("result").style.display = "none";
 
-  // テキストと子要素すべてクリア
   const resultText = document.getElementById("resultText");
   while (resultText.firstChild) {
     resultText.removeChild(resultText.firstChild);
   }
 
-  // 入力欄リセット（もし使っている場合）
   const input = document.getElementById("userInput");
   if (input) input.value = "";
 
-  // 最初のセクションを表示
   showSection("mainMenu");
 }
 
