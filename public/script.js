@@ -26,9 +26,18 @@ function showResult(type) {
   const resultText = document.getElementById("resultText");
   let html = "";
 
-  if (type === "yoyaku-ari") {
-    html = "📋順番確認ページへご案内します。<br>来院時間をご確認ください。";
-  } else if (type === "yoyaku-nashi") {
+if (type === "yoyaku-ari") {
+  html = `
+    <p>
+      ありがとうございます。<br>
+      本日来院される目安については、<a href="https://ssc8.doctorqube.com/takeoka-clinic/" target="_blank" rel="noopener noreferrer">コチラ</a>から「院内でお待ちの方」「まだご来院されていない方」の番号を参考にお願いいたします。
+    </p>
+    <p>
+      WEB問診がお済でない方は、<a href="https://symview.me/medical_interview_flows/takeoka-clinic/public/?url_kind=1" target="_blank" rel="noopener noreferrer">コチラ</a>から事前にお願いいたします。
+    </p>
+  `;
+}
+  else if (type === "yoyaku-nashi") {
     html = `
       <p>
         当日ご来院の方のみ 
