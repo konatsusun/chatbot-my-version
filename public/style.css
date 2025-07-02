@@ -1,3 +1,46 @@
+.chat-header {
+  position: relative; /* ← ここが重要！ */
+  padding-top: 60px; /* ←ここを追加 or 増やす！デフォルトより余裕を持たせる */
+}
+
+.back-button {
+  display: inline-block;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 1rem;
+  color: #333;
+  text-decoration: none;
+  background-color: #f2f2f2;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: background-color 0.2s ease;
+  z-index: 1000;
+}
+
+.back-button:hover {
+  background-color: #e0e0e0;
+}
+/* ここまで上に矢印戻るボタン表示 */
+
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1rem;
+  color: #555;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  padding: 4px;
+  z-index: 1000;
+}
+.back-button:hover {
+  text-decoration: none;
+}
+/* ここまで戻るボタンを文字だけの表示設定 */
+
 body {
   font-family: "Hiragino Kaku Gothic ProN", sans-serif;
   background: #f0f8ff;

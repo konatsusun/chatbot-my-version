@@ -4,13 +4,21 @@ let sectionHistory = [currentSection];
 function showSection(id) {
   const current = document.getElementById(currentSection);
   const next = document.getElementById(id);
+
   if (current && current !== next) {
     current.style.display = "none";
     sectionHistory.push(id);
   }
+
   if (next) {
     next.style.display = "block";
     currentSection = id;
+  }
+
+  // ← 戻るボタンの表示制御
+  const backBtn = document.querySelector(".back-button");
+  if (backBtn) {
+    backBtn.style.display = (id === "mainMenu") ? "none" : "inline";
   }
 }
 
@@ -26,18 +34,17 @@ function showResult(type) {
   const resultText = document.getElementById("resultText");
   let html = "";
 
-if (type === "yoyaku-ari") {
-  html = `
-    <p>
-      ありがとうございます。<br>
-      本日来院される目安については、<a href="https://ssc8.doctorqube.com/takeoka-clinic/" target="_blank" rel="noopener noreferrer">コチラ</a>から「院内でお待ちの方」「まだご来院されていない方」の番号を参考にお願いいたします。
-    </p>
-    <p>
-      WEB問診がお済でない方は、<a href="https://symview.me/medical_interview_flows/takeoka-clinic/public/?url_kind=1" target="_blank" rel="noopener noreferrer">コチラ</a>から事前にお願いいたします。
-    </p>
-  `;
-}
-  else if (type === "yoyaku-nashi") {
+  if (type === "yoyaku-ari") {
+    html = `
+      <p>
+        ありがとうございます。<br>
+        本日来院される目安については、<a href="https://ssc8.doctorqube.com/takeoka-clinic/" target="_blank" rel="noopener noreferrer">コチラ</a>から「院内でお待ちの方」「まだご来院されていない方」の番号を参考にお願いいたします。
+      </p>
+      <p>
+        WEB問診がお済でない方は、<a href="https://symview.me/medical_interview_flows/takeoka-clinic/public/?url_kind=1" target="_blank" rel="noopener noreferrer">コチラ</a>から事前にお願いいたします。
+      </p>
+    `;
+  } else if (type === "yoyaku-nashi") {
     html = `
       <p>
         当日ご来院の方のみ 
