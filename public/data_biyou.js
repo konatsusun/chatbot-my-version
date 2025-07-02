@@ -206,7 +206,7 @@ Qスイッチルビーレーザーは通常は1度の治療で終了ですが、
 </div>
 
 <div class="treatment-block">
-  <h3>【メソアクティス】無針導入 美容成分ケア</h3>
+  <h3>【メソアクティス】</h3>
   <p>
     メソアクティスは電気の力で皮膚の細胞膜に微小なすき間をつくり、有効成分をダイレクトかつ大量に浸透させる治療です。<br>
     針を使わずに安全・無痛で美容成分を導入できるのが最大の特長です。
@@ -219,52 +219,66 @@ Qスイッチルビーレーザーは通常は1度の治療で終了ですが、
     当院では初めての方にも分かりやすく、目的別コースをご用意しています。<br>
     肌状態やお悩みに合わせて、安心してご相談いただけます。
   </p>
- <table class="price-table">
-    <thead>
-      <tr>
-        <th>コース名</th>
-        <th>トライアル</th>
-        <th>1回</th>
-        <th>5回</th>
-        <th>10回</th>
-      </tr>
-    </thead>
+
+  <table class="price-table">
+    <thead><tr><th>回数</th><th>料金（税込）</th></tr></thead>
     <tbody>
-      <tr>
-        <td>美白コース（くすみ・肝斑）</td>
-        <td>10,300円</td>
-        <td>12,100円</td>
-        <td>54,870円</td>
-        <td>96,300円</td>
-      </tr>
-      <tr>
-        <td>スタンダードコース（美肌・しわ・たるみ）</td>
-        <td>12,100円</td>
-        <td>14,520円</td>
-        <td>65,850円</td>
-        <td>124,300円</td>
-      </tr>
-      <tr>
-        <td>アンチエイジングコース（美肌・しわ・たるみ・肝斑）</td>
-        <td>16,500円</td>
-        <td>18,150円</td>
-        <td>81,730円</td>
-        <td>145,640円</td>
-      </tr>
-      <tr>
-        <td>エクセレント美白コース（美肌・肝斑）</td>
-        <td>16,500円</td>
-        <td>18,150円</td>
-        <td>81,730円</td>
-        <td>145,640円</td>
-      </tr>
-      <tr>
-        <td>スーパーアンチエイジングコース</td>
-        <td>21,780円</td>
-        <td>24,200円</td>
-        <td>109,780円</td>
-        <td>193,820円</td>
-      </tr>
+      <tr><td>トライアル</td><td>10,300円</td></tr>
+      <tr><td>1回</td><td>12,100円</td></tr>
+      <tr><td>5回</td><td>54,870円</td></tr>
+      <tr><td>10回</td><td>96,300円</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="treatment-block">
+  <h4>🌿 スタンダードコース（美肌・しわ・たるみ）</h4>
+  <table class="price-table">
+    <thead><tr><th>回数</th><th>料金（税込）</th></tr></thead>
+    <tbody>
+      <tr><td>トライアル</td><td>12,100円</td></tr>
+      <tr><td>1回</td><td>14,520円</td></tr>
+      <tr><td>5回</td><td>65,850円</td></tr>
+      <tr><td>10回</td><td>124,300円</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="treatment-block">
+  <h4>🌼 アンチエイジングコース（美肌・しわ・たるみ・肝斑）</h4>
+  <table class="price-table">
+    <thead><tr><th>回数</th><th>料金（税込）</th></tr></thead>
+    <tbody>
+      <tr><td>トライアル</td><td>16,500円</td></tr>
+      <tr><td>1回</td><td>18,150円</td></tr>
+      <tr><td>5回</td><td>81,730円</td></tr>
+      <tr><td>10回</td><td>145,640円</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="treatment-block">
+  <h4>🌟 エクセレント美白コース（美肌・肝斑）</h4>
+  <table class="price-table">
+    <thead><tr><th>回数</th><th>料金（税込）</th></tr></thead>
+    <tbody>
+      <tr><td>トライアル</td><td>16,500円</td></tr>
+      <tr><td>1回</td><td>18,150円</td></tr>
+      <tr><td>5回</td><td>81,730円</td></tr>
+      <tr><td>10回</td><td>145,640円</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="treatment-block">
+  <h4>💎 スーパーアンチエイジングコース</h4>
+  <table class="price-table">
+    <thead><tr><th>回数</th><th>料金（税込）</th></tr></thead>
+    <tbody>
+      <tr><td>トライアル</td><td>21,780円</td></tr>
+      <tr><td>1回</td><td>24,200円</td></tr>
+      <tr><td>5回</td><td>109,780円</td></tr>
+      <tr><td>10回</td><td>193,820円</td></tr>
     </tbody>
   </table>
 </div>
