@@ -34,7 +34,6 @@ const biyouData = {
 </p>
 
 <h4>🗂 脱毛部位</h4>
-
 <b>🔸 Sパーツ：</b>
 <ul>
   <li>うなじ・額・鼻下・顎・顎下・首</li>
@@ -51,17 +50,39 @@ const biyouData = {
 </ul>
 <p><small>※ コース契約は部位ごと／他部位の転用不可</small></p>
 
+<h3>コンプリート全身脱毛</h3>
+<table class="price-table">
+  <thead><tr><th>回数</th><th>料金（税込）</th></tr></thead>
+  <tbody>
+    <tr><td>1回</td><td>43,780円</td></tr>
+    <tr><td>3回</td><td>96,030円</td></tr>
+    <tr><td>6回</td><td>148,060円</td></tr>
+  </tbody>
+</table>
+
+<h3>Sパーツ脱毛（手指・足指・鼻下など）</h3>
+<table class="price-table">
+  <thead><tr><th>回数</th><th>料金（税込）</th></tr></thead>
+  <tbody>
+    <tr><td>1回</td><td>6,380円</td></tr>
+    <tr><td>3回</td><td>17,490円</td></tr>
+    <tr><td>6回</td><td>27,060円</td></tr>
+  </tbody>
+</table>
+
 <h4>✂️ 剃毛とご来院の注意</h4>
 <ul>
   <li>前日または当日朝までに剃毛をお済ませください</li>
   <li>剃毛が不十分な場合、施術できないことがあります</li>
   <li>当院での剃毛希望時の料金：</li>
 </ul>
-<table border="1" cellspacing="0" cellpadding="4">
-  <tr><th>部位サイズ</th><th>剃毛代（税込）</th></tr>
-  <tr><td>Sサイズ</td><td>5,000円</td></tr>
-  <tr><td>Mサイズ</td><td>10,000円</td></tr>
-  <tr><td>Lサイズ</td><td>15,000円</td></tr>
+<table class="price-table">
+  <thead><tr><th>部位サイズ</th><th>剃毛代（税込）</th></tr></thead>
+  <tbody>
+    <tr><td>Sサイズ</td><td>5,000円</td></tr>
+    <tr><td>Mサイズ</td><td>10,000円</td></tr>
+    <tr><td>Lサイズ</td><td>15,000円</td></tr>
+  </tbody>
 </table>
     `
   },
@@ -80,6 +101,7 @@ const biyouData = {
 針なし導入。電気の力で美容成分を深部へ浸透。
 お肌の悩みに応じたコース設計。`
   }
+
 
   // 他の施術もここに続けて追加できます！
 };

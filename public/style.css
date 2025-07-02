@@ -80,6 +80,24 @@ th {
   font-weight: bold;
 }
 
+/* 脱毛表部分の表記追加分３ */
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.95rem;
+}
+.price-table th,
+.price-table td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  text-align: center;
+}
+.price-table thead {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
+
 /* ▼ セクション見出しを強調表示（h3, h4） */
 #resultText h3 {
   font-size: 1.2rem;
