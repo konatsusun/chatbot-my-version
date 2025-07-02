@@ -33,6 +33,16 @@ const biyouData = {
 ※産毛への反応には個人差あり
 </p>
 
+<h3>Sパーツ脱毛（手指・足指・鼻下など）</h3>
+<table class="price-table">
+  <thead><tr><th>回数</th><th>料金（税込）</th></tr></thead>
+  <tbody>
+    <tr><td>1回</td><td>6,380円</td></tr>
+    <tr><td>3回</td><td>17,490円</td></tr>
+    <tr><td>6回</td><td>27,060円</td></tr>
+  </tbody>
+</table>
+
 <h4>🗂 脱毛部位</h4>
 <b>🔸 Sパーツ：</b>
 <ul>
@@ -41,14 +51,84 @@ const biyouData = {
   <li>Vライン・Iライン（女性限定）・Oライン</li>
   <li>膝小僧・足の甲・指・頬</li>
 </ul>
-<p><small>※ 髪や眉の近くは0.5cm以上離して照射</small></p>
+<p><small>※ 髪や眉の近くは0.5cm以上離して照射※Sパーツでのコース契約に関しましては、ご契約いただいた部位以外のご利用は承れませんので予めご了承ください。
+※レーザー脱毛使用機器 : Gentle Max Pro, Gentle Max Pro Plus, Elite iQ
+</small></p></small></p>
+
+<h3>Lパーツ脱毛（腕・脚・背中など）</h3>
+<table class="price-table">
+  <thead>
+    <tr><th>回数</th><th>料金（税込）</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1回</td><td>19,580円</td></tr>
+    <tr><td>3回</td><td>55,440円</td></tr>
+    <tr><td>6回</td><td>90,750円</td></tr>
+  </tbody>
+</table>
 
 <b>🔹 Lパーツ：</b>
 <ul>
   <li>肘上・肘下・膝上・膝下</li>
-  <li>胸・腹・腰・臀部・背中（上下）</li>
+  <li>胸部・腹部・腰部・臀部</li>
+  <li>背中(肩甲骨より上）・背中(肩甲骨より下）</li>
 </ul>
-<p><small>※ コース契約は部位ごと／他部位の転用不可</small></p>
+<p><small>※Lパーツでのコース契約に関しましては、ご契約いただいた部位以外のご利用は承れませんので予めご了承ください。
+※レーザー脱毛使用機器 : Gentle Max Pro, Gentle Max Pro Plus, Elite iQ
+</small></p>
+
+
+<h3>両ワキ</h3>
+<table class="price-table">
+  <thead><tr><th>回数</th><th>料金（税込）</th></tr></thead>
+  <tbody>
+    <tr><td>1回</td><td>1,680円</td></tr>
+    <tr><td>3回</td><td>4,620円</td></tr>
+    <tr><td>6回</td><td>9,080円</td></tr>
+  </tbody>
+</table>
+
+<h3>フェイス脱毛</h3>
+<table class="price-table">
+  <thead><tr><th>回数</th><th>料金（税込）</th></tr></thead>
+  <tbody>
+    <tr><td>1回</td><td>12,710円</td></tr>
+    <tr><td>3回</td><td>34,490円</td></tr>
+    <tr><td>6回</td><td>55,660円</td></tr>
+  </tbody>
+</table>
+
+<h3>ハイジニーナ（VIO脱毛）</h3>
+<table class="price-table">
+  <thead><tr><th>回数</th><th>料金（税込）</th></tr></thead>
+  <tbody>
+    <tr><td>1回</td><td>10,780円</td></tr>
+    <tr><td>3回</td><td>31,350円</td></tr>
+    <tr><td>6回</td><td>59,400円</td></tr>
+  </tbody>
+</table>
+
+<h3>手足すっきりセット</h3>
+<table class="price-table">
+  <thead><tr><th>回数</th><th>料金（税込）</th></tr></thead>
+  <tbody>
+    <tr><td>1回</td><td>44,590円</td></tr>
+    <tr><td>3回</td><td>127,050円</td></tr>
+    <tr><td>6回</td><td>235,270円</td></tr>
+  </tbody>
+</table>
+
+<h3>全身コース（顔・VIO除く）</h3>
+<table class="price-table">
+  <thead><tr><th>回数</th><th>料金（税込）</th></tr></thead>
+  <tbody>
+    <tr><td>1回</td><td>55,800円</td></tr>
+    <tr><td>3回</td><td>164,700円</td></tr>
+    <tr><td>4回</td><td>191,670円</td></tr>
+    <tr><td>6回</td><td>268,620円</td></tr>
+  </tbody>
+</table>
+
 
 <h3>コンプリート全身脱毛</h3>
 <table class="price-table">
@@ -60,15 +140,6 @@ const biyouData = {
   </tbody>
 </table>
 
-<h3>Sパーツ脱毛（手指・足指・鼻下など）</h3>
-<table class="price-table">
-  <thead><tr><th>回数</th><th>料金（税込）</th></tr></thead>
-  <tbody>
-    <tr><td>1回</td><td>6,380円</td></tr>
-    <tr><td>3回</td><td>17,490円</td></tr>
-    <tr><td>6回</td><td>27,060円</td></tr>
-  </tbody>
-</table>
 
 <h4>✂️ 剃毛とご来院の注意</h4>
 <ul>
