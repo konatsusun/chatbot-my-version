@@ -1,46 +1,4 @@
-.chat-header {
-  position: relative; /* ← ここが重要！ */
-  padding-top: 60px; /* ←ここを追加 or 増やす！デフォルトより余裕を持たせる */
-}
-
-.back-button {
-  display: inline-block;
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  font-size: 1rem;
-  color: #333;
-  text-decoration: none;
-  background-color: #f2f2f2;
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  transition: background-color 0.2s ease;
-  z-index: 1000;
-}
-
-.back-button:hover {
-  background-color: #e0e0e0;
-}
-/* ここまで上に矢印戻るボタン表示 */
-
-.back-button {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 1rem;
-  color: #555;
-  background: none;
-  border: none;
-  text-decoration: underline;
-  padding: 4px;
-  z-index: 1000;
-}
-.back-button:hover {
-  text-decoration: none;
-}
-/* ここまで戻るボタンを文字だけの表示設定 */
-
+/* 🌿 基本レイアウトと背景 */
 body {
   font-family: "Hiragino Kaku Gothic ProN", sans-serif;
   background: #f0f8ff;
@@ -48,33 +6,66 @@ body {
   padding: 20px;
 }
 
+/* 📦 チャットコンテナ */
 .chat-container {
   max-width: 440px;
   margin: auto;
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 20px;
+  padding: 12px 20px 20px;
+  position: relative;
 }
 
+/* 🎩 ヘッダー（画像と名前が横並び） */
 .chat-header {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
+  align-items: center;        /* 縦中央揃え */
+  justify-content: center;    /* 横方向中央揃え */
+  gap: 1rem;                  /* 画像と文字の間隔 */
+  padding-top: 10px;
+  margin-top: 0;
+  position: relative;
 }
 
+/* 🐰 画像：たけぴー先生アイコン */
 .avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+  width: 120px;
+  height: auto;
+  border-radius: 0;
 }
 
+/* 👨‍⚕️ タイトルテキスト */
+.chat-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  white-space: nowrap; /* 折り返し防止 */
+}
+
+/* 🔙 戻るボタン：左上に固定 */
+.back-button {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-size: 0.95rem;
+  color: #555;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  z-index: 1000;
+  padding: 4px;
+}
+
+.back-button:hover {
+  text-decoration: none;
+}
+
+/* 💬 各セクション */
 .chat-box {
   margin-top: 20px;
 }
 
+/* 🔘 ボタンスタイル */
 button {
   display: block;
   width: 100%;
@@ -92,6 +83,7 @@ button:hover {
   background-color: #2c5f91;
 }
 
+/* 💙 チャットバブル */
 .chat-response {
   display: flex;
   align-items: flex-start;
@@ -105,7 +97,7 @@ button:hover {
   max-width: 80%;
 }
 
-/* 脱毛のところのCSS追記分 */
+/* 📊 表（料金表など） */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -123,25 +115,7 @@ th {
   font-weight: bold;
 }
 
-/* 脱毛表部分の表記追加分３ */
-.price-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1em 0;
-  font-size: 0.95rem;
-}
-.price-table th,
-.price-table td {
-  border: 1px solid #ccc;
-  padding: 8px 12px;
-  text-align: center;
-}
-.price-table thead {
-  background-color: #f9f9f9;
-  font-weight: bold;
-}
-
-/* ▼ セクション見出しを強調表示（h3, h4） */
+/* 🔎 結果表示部分 */
 #resultText h3 {
   font-size: 1.2rem;
   background-color: #e6f4ff;
@@ -159,20 +133,17 @@ th {
   color: #004466;
 }
 
-/* ▼ 通常段落の余白と見やすさ調整 */
 #resultText p {
   margin: 10px 0;
   line-height: 1.6;
   font-size: 0.95rem;
 }
 
-/* ▼ 小さな補足文字用 */
 #resultText small {
   font-size: 0.85rem;
   color: #666;
 }
 
-/* ▼ 箇条書きの装飾 */
 #resultText ul {
   margin: 8px 0 12px 16px;
   padding-left: 10px;
@@ -183,7 +154,6 @@ th {
   margin: 4px 0;
 }
 
-/* ▼ テーブル装飾（剃毛代など） */
 #resultText table {
   width: 100%;
   border-collapse: collapse;
@@ -195,7 +165,6 @@ th {
 #resultText td {
   border: 1px solid #ccc;
   padding: 8px;
-  text-align: left;
 }
 
 #resultText th {
@@ -203,5 +172,3 @@ th {
   color: #003b5c;
   font-weight: bold;
 }
-
-
