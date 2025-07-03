@@ -105,3 +105,57 @@
 // function openLink(url) {
 //   window.location.href = url;
 // }
+
+
+✅ 次にやること
+① ブランチ上で編集・実験スタート！
+index.html や style.css, script.js を安心して編集可能！
+
+もし崩れたりうまくいかなかったら「mainに戻せば元通り」🎈
+
+bash
+git checkout main  # ← 本番に戻るとき
+git checkout design-test-branch  # ← また分岐に戻りたいとき
+② 実験した変更を保存するなら
+bash
+git add .
+git commit -m "UI新案の実装テスト中"
+→ 何度でも「実験→保存→確認」ができます！
+
+③ もし「よかった！」となったら、mainに反映する方法も◎
+bash
+git checkout main
+git merge design-test-branch
+🎯 これでできること
+レイアウトの新提案（カテゴリの配置・色味変更など）
+
+UI切り替え機能（トップメニュー→美容メニューなど）
+
+見せ方の改善（フェード表示、アイコン追加 など）
+
+💡 ぜんぶ「試せる場所」ができたので、何でもチャレンジできますよ！
+
+
+
+
+    <!-- 結果表示
+<div class="chat-box" id="result" style="display:none;">
+      <div class="chat-response">
+        <img src="/yoko-takepi.png" class="avatar" />
+        <div class="bubble">
+          <div id="resultText"></div>
+        </div>
+      </div>
+      <button onclick="resetChat()">最初に戻る</button>
+      <button onclick="goBackAuto()">← 前の画面に戻る</button>
+    </div>
+  </div>
+
+  <!-- ✅ 静的ファイルは / から始めることで public/ 以下を参照 -->
+  <script src="/data_biyou.js"></script>
+  <script src="/script.js"></script>
+  <!-- ✏️ この行を変更 -->
+  <!-- <script src="/script3.js"></script> -->
+
+</body>
+</html> -->

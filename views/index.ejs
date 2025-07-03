@@ -5,76 +5,186 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>たけぴー先生チャット</title>
   <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/kana.css" />
 </head>
 <body>
-<div class="chat-container">
-  <div class="chat-header">
-    <a href="#" class="back-button" onclick="goBackAuto()">← 戻る</a>
-    <img src="/top_takepi-pi.png" alt="たけぴー先生" class="avatar" />  
-    <h2>たけぴー先生</h2>
-  </div>
+  <div class="chat-container">
+    <!-- ヘッダー -->
+    <div class="chat-header">
+      <a href="#" class="back-button" onclick="goBackAuto()">← 戻る</a>
+      <img src="/top_takepi-pi.png" alt="たけぴー先生" class="avatar" />
+      <h2>たけぴー先生</h2>
+    </div>
 
+    <!-- 診療メニューラベル -->
+    <p class="section-label">🩺 <span class="label-text">診療メニュー</span></p>
 
     <!-- スタートメニュー -->
     <div class="chat-box" id="mainMenu">
-      <p>こんにちは！ご希望の内容を教えてください♪</p>
-      <button onclick="showSection('hifuka')">皮膚科（保険診療）</button>
-      <button onclick="showSection('biyouhifuka')">美容皮膚科（自由診療）</button>
-      <button onclick="showSection('biyougeka')">美容外科（自由診療）</button>
-      <button onclick="showSection('skincare')">スキンケア商品の購入</button>
-      <button onclick="showSection('others')">その他</button>
-    </div>
-    
-    <!-- 皮膚科 -->
-    <div class="chat-box" id="hifuka" style="display:none;">
-      <p>順番予約は取られていますか？</p>
-      <button onclick="showResult('yoyaku-ari')">はい</button>
-      <button onclick="showResult('yoyaku-nashi')">いいえ</button>
-      <button onclick="goBackAuto()">← 前の画面に戻る</button>
-    </div>
+      <p class="kana-intro">こんにちは！お悩みの症状の頭文字を選んでください</p>
+      <p class="example-text">例：しみ → し　脱毛 → た　etc.</p>
+      <p class="note-text">※ご案内する内容は自由診療になります</p>
 
-    <!-- 美容皮膚科 -->
-    <div class="chat-box" id="biyouhifuka" style="display:none;">
-      <p>ご希望の施術をお選びください：</p>
+      <!-- インデックスボタン（あ〜わ） -->
+      <div class="kana-buttons">
+        <button data-kana="あ">あ</button>
+        <button data-kana="い">い</button>
+        <button data-kana="き">き</button>
+        <button data-kana="く">く</button>
+        <button data-kana="け">け</button>
+        <button data-kana="し">し</button>
+        <button data-kana="た">た</button>
+        <button data-kana="に">に</button>
+        <button data-kana="ひ">ひ</button>
+        <button data-kana="ふ">ふ</button>
+        <button data-kana="ほ">ほ</button>
+        <button data-kana="め">め</button>
+        <button data-kana="わ">わ</button>
+      </div>
+        <!-- ✅ この2つをここに入れる！ -->
+        <p class="section-label">🛍️ <span class="label-text">スキンケア商品の購入</span></p>
+        <button onclick="showSection('skincare')">スキンケア商品の購入</button>
+   </div>
 
-      <!-- ✅ 要約＋詳細ボタン -->
-      <button onclick="showSummary('datsumou')">脱毛</button>
-      <button onclick="showSummary('shimi')">しみ・美白</button>
+   <!-- 「あ」セクション -->
+<div class="chat-box kana-section" id="kana-あ" style="display:none;">
+  <p class="section-label">🩺「あ」から始まる症状</p>
+  <button class="kana-style" onclick="showSummary('akaragao')">赤ら顔</button>
+  <button class="kana-style" onclick="showSummary('aga')">AGA / FAGA</button>
+  <p class="note-text">※自由診療の参考情報です</p>
+  <button class="kana-style" onclick="goBackAuto()">← 戻る</button>
+</div>
 
-      <!-- 従来の外部リンク -->
-      <button onclick="openLink('https://example.com/akaragao')">赤ら顔</button>
-      <button onclick="openLink('https://example.com/nikibi')">にきび・にきび跡</button>
-      <button onclick="openLink('https://example.com/keana')">毛穴・くすみ</button>
-      <button onclick="openLink('https://example.com/karumi')">たるみ</button>
-      <button onclick="openLink('https://example.com/hokuro')">ほくろ・いぼ・そばかす</button>
-      <button onclick="openLink('https://example.com/takansho')">多汗症・ワキガ</button>
-      <button onclick="openLink('https://example.com/pierce')">ピアス（耳たぶ）</button>
-      <button onclick="openLink('https://example.com/chusha')">美容注射・点滴</button>
-      <button onclick="openLink('https://example.com/aga')">AGA/FAGA</button>
-      <button onclick="openLink('https://example.com/ed')">ED</button>
-      <button onclick="openLink('https://example.com/tattoo')">入れ墨除去</button>
-      <button onclick="openLink('https://example.com/sonota')">その他</button>
-      <button onclick="goBackAuto()">← 前の画面に戻る</button>
-    </div>
+  <!-- 「い」セクション -->
+<div class="chat-box kana-section" id="kana-い" style="display:none;">
+  <p class="section-label">🩺「い」から始まる症状</p>
+  <button class="kana-style" onclick="showSummary('ibo')">いぼ</button>
+  <button class="kana-style" onclick="showSummary('irezumi')">入れ墨除去</button>
+  <button class="kana-style" onclick="showSummary('ed')">ED</button>
+  <p class="note-text">※自由診療の参考情報です</p>
+  <button class="kana-style" onclick="goBackAuto()">← 戻る</button>
+</div>
 
-    <!-- 美容外科 -->
-    <div class="chat-box" id="biyougeka" style="display:none;">
-      <p>ご希望の施術をお選びください：</p>
-      <button onclick="openLink('https://example.com/futae')">二重の整形</button>
-      <button onclick="openLink('https://example.com/megashira')">目頭の整形</button>
-      <button onclick="openLink('https://example.com/eyelift')">目のたるみ整形</button>
-      <button onclick="openLink('https://example.com/kuma')">クマの整形（目の下）</button>
-      <button onclick="openLink('https://example.com/threadlift')">糸リフト</button>
-      <button onclick="openLink('https://example.com/hyaluronic')">ヒアルロン酸</button>
-      <button onclick="openLink('https://example.com/piercing')">ピアス（へそ・耳軟骨など）</button>
-      <button onclick="openLink('https://example.com/tattoo')">タトゥー除去</button>
-      <button onclick="openLink('https://example.com/mimidaresu')">耳垂裂形成</button>
-      <button onclick="openLink('https://example.com/kizu')">傷跡修正</button>
-      <button onclick="openLink('https://example.com/other-biyougeka')">その他</button>
-      <button onclick="goBackAuto()">← 前の画面に戻る</button>
-    </div>
+  <!-- 「き」セクション -->
+<div class="chat-box kana-section" id="kana-き" style="display:none;">
+  <p class="section-label">🩺「き」から始まる症状</p>
+  <button class="kana-style" onclick="showSummary('kizu')">傷跡修正</button>
+  <p class="note-text">※自由診療の参考情報です</p>
+  <button class="kana-style" onclick="goBackAuto()">← 戻る</button>
+</div>
 
-    <!-- スキンケア購入① -->
+
+  <!-- 「く」セクション -->
+<div class="chat-box kana-section" id="kana-く" style="display:none;">
+  <p class="section-label">🩺「く」から始まる症状</p>
+  <button class="kana-style" onclick="showSummary('kusumi')">くすみ</button>
+  <button class="kana-style" onclick="showSummary('kuma')">クマの整形（目の下）</button>
+  <p class="note-text">※自由診療の参考情報です</p>
+  <button class="kana-style" onclick="goBackAuto()">← 戻る</button>
+</div>
+
+  <!-- 「け」セクション -->
+<div class="chat-box kana-section" id="kana-け" style="display:none;">
+  <p class="section-label">🩺「け」から始まる症状</p>
+  <button class="kana-style" onclick="showSummary('keana')">毛穴の開き・黒ずみ</button>
+  <p class="note-text">※自由診療の参考情報です</p>
+  <button class="kana-style" onclick="goBackAuto()">← 戻る</button>
+</div>
+
+  <!-- 「し」セクション -->
+<div class="chat-box kana-section" id="kana-し" style="display:none;">
+  <p class="section-label">🩺「し」から始まる症状</p>
+  <!-- ✅ スタイル統一！ -->
+  <button class="kana-style" onclick="showSummary('shimi')">しみ/美白</button>
+  <button class="kana-style" onclick="showSummary('shiwa')">しわ</button>
+  <button class="kana-style" onclick="showSummary('kanpan')">肝斑</button>
+  <p class="note-text">※自由診療の参考情報です</p>
+  <button class="kana-style" onclick="goBackAuto()">← 戻る</button>
+</div>
+
+  <!-- 「た」セクション -->
+<div class="chat-box kana-section" id="kana-た" style="display:none;">
+  <p class="section-label">🩺「た」から始まる症状</p>
+  <!-- ✅ クラス追加でスタイル統一 -->
+  <button class="kana-style" onclick="showSummary('takansho')">多汗症</button>
+  <button class="kana-style" onclick="showSummary('datsumou')">脱毛</button>
+  <button class="kana-style" onclick="showSummary('tattoo')">タトゥー除去</button>  
+  <button class="kana-style" onclick="showSummary('tarumi')">たるみ</button>
+  <p class="note-text">※自由診療の参考情報です</p>
+  <!-- ✅ 戻るボタンも青系に -->
+  <button class="kana-style" onclick="goBackAuto()">← 戻る</button>
+</div>
+
+  <!-- 「て」セクション -->
+<div class="chat-box kana-section" id="kana-て" style="display:none;">
+  <p class="section-label">🩺「て」から始まる症状</p>
+  <button class="kana-style" onclick="showSummary('tenteki')">点滴</button>
+  <p class="note-text">※自由診療の参考情報です</p>
+  <button class="kana-style" onclick="goBackAuto()">← 戻る</button>
+</div>
+
+  <!-- 「に」セクション -->
+<div class="chat-box kana-section" id="kana-に" style="display:none;">
+  <p class="section-label">🩺「に」から始まる症状</p>
+  <button class="kana-style" onclick="showSummary('nikibi')">にきび・にきび跡</button>
+  <p class="note-text">※自由診療の参考情報です</p>
+  <button class="kana-style" onclick="goBackAuto()">← 戻る</button>
+</div>
+
+    <!-- 「ひ」セクション -->
+<div class="chat-box kana-section" id="kana-ひ" style="display:none;">
+  <p class="section-label">🩺「ひ」から始まる症状</p>
+  <button class="kana-style" onclick="showSummary('pierce')">ピアス（耳たぶ）</button>
+  <button class="kana-style" onclick="showSummary('piercing')">ピアス（その他）</button>
+  <button class="kana-style" onclick="showSummary('hiyaluron')">ヒアルロン酸</button>
+  <button class="kana-style" onclick="showSummary('biyou_chusha')">美容注射・点滴</button>
+  <p class="note-text">※自由診療の参考情報です</p>
+  <button class="kana-style" onclick="goBackAuto()">← 戻る</button>
+</div>
+
+  <!-- 「ふ」セクション -->
+<div class="chat-box kana-section" id="kana-ふ" style="display:none;">
+  <p class="section-label">🩺「ふ」から始まる症状</p>
+  <button class="kana-style" onclick="showSummary('ed')">ED（※E分類としてこちらに配置）</button>
+  <p class="note-text">※自由診療の参考情報です</p>
+  <button class="kana-style" onclick="goBackAuto()">← 戻る</button>
+</div>
+
+ <!-- 「ほ」セクション -->
+<div class="chat-box kana-section" id="kana-ほ" style="display:none;">
+  <p class="section-label">🩺「ほ」から始まる症状</p>
+  <button class="kana-style" onclick="showSummary('hokuro')">ほくろ</button>
+  <p class="note-text">※自由診療の参考情報です</p>
+  <button class="kana-style" onclick="goBackAuto()">← 戻る</button>
+</div>
+
+  <!-- 「み」セクション -->
+<div class="chat-box kana-section" id="kana-み" style="display:none;">
+  <p class="section-label">🩺「み」から始まる症状</p>
+  <button class="kana-style" onclick="showSummary('mimidaresu')">耳垂裂形成</button>
+  <p class="note-text">※自由診療の参考情報です</p>
+  <button class="kana-style" onclick="goBackAuto()">← 戻る</button>
+</div>
+
+  <!-- 「め」セクション -->
+<div class="chat-box kana-section" id="kana-め" style="display:none;">
+  <p class="section-label">🩺「め」から始まる症状</p>
+  <button class="kana-style" onclick="showSummary('megashira')">目頭の整形</button>
+  <button class="kana-style" onclick="showSummary('eyelift')">目のたるみ整形</button>
+  <p class="note-text">※自由診療の参考情報です</p>
+  <button class="kana-style" onclick="goBackAuto()">← 戻る</button>
+</div>
+
+<!-- 「わ」セクション -->
+<div class="chat-box kana-section" id="kana-わ" style="display:none;">
+  <p class="section-label">🩺「わ」から始まる症状</p>
+  <button class="kana-style" onclick="showSummary('wakiga')">ワキガ</button>
+  <p class="note-text">※自由診療の参考情報です</p>
+  <button class="kana-style" onclick="goBackAuto()">← 戻る</button>
+</div>
+
+
+    <!-- スキンケア① -->
     <div class="chat-box" id="skincare" style="display:none;">
       <p>どのように商品をお探しですか？</p>
       <button onclick="showSection('brandSelect')">メーカー名から選ぶ</button>
@@ -108,9 +218,8 @@
       <button onclick="goBackAuto()">← 前の画面に戻る</button>
     </div>
 
-
-    <!-- 結果表示 -->
-<div class="chat-box" id="result" style="display:none;">
+    <!-- 結果表示（施術の詳細） -->
+    <div class="chat-box" id="result" style="display:none;">
       <div class="chat-response">
         <img src="/yoko-takepi.png" class="avatar" />
         <div class="bubble">
@@ -122,11 +231,9 @@
     </div>
   </div>
 
-  <!-- ✅ 静的ファイルは / から始めることで public/ 以下を参照 -->
+  <!-- スクリプト -->
   <script src="/data_biyou.js"></script>
   <script src="/script.js"></script>
-  <!-- ✏️ この行を変更 -->
-  <!-- <script src="/script3.js"></script> -->
-
+  <script src="/kana.js"></script>
 </body>
 </html>

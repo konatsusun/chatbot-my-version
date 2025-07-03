@@ -1,0 +1,145 @@
+.kana-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+  padding: 0 10px;
+  justify-items: center;
+  justify-content: center;
+}
+
+.kana-buttons button {
+  padding: 12px 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: #e0f0ff;
+  border: 1px solid #66aaff;
+  color: #004080;
+  width: 100%;
+  max-width: 120px;
+  transition: 0.2s;
+  min-width: 80px;
+}
+
+.kana-buttons button:hover {
+  background-color: #c6e4ff;
+  cursor: pointer;
+}
+
+.kana-buttons button.active-kana {
+  background-color: #b3e5fc;
+  border-color: #039be5;
+  color: #002b5c;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+  font-weight: 700;
+}
+
+/* ⛳ 通常ボタン（kana-styleなし）の見た目 */
+.kana-section button:not(.kana-style) {
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+  color: #333;
+}
+.kana-section button:not(.kana-style):hover {
+  background-color: #ffe6ea;
+}
+
+
+
+.kana-section button.kana-style {
+  display: block;
+  margin: 8px auto;
+  padding: 10px 16px;
+  background-color: #e0f0ff;
+  border: 1px solid #66aaff;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  width: 90%;
+  max-width: 300px;
+  text-align: center;
+  color: #004080;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.kana-section button.kana-style:hover {
+  background-color: #c6e4ff;
+  cursor: pointer;
+}
+
+/* テキスト系 */
+.kana-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.example-text {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.note-text {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 4px;
+}
+
+.section-label {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #004080;
+  margin: 24px 0 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-label .label-text {
+  font-size: 1.05rem;
+}
+
+/* ✅ インデックスボタンと同じ見た目にしたい症状・戻るボタン */
+.kana-style {
+  padding: 12px 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: #e0f0ff;
+  border: 1px solid #66aaff;
+  color: #004080;
+  width: 100%;
+  max-width: 120px;
+  transition: 0.2s;
+}
+
+.kana-style:hover {
+  background-color: #c6e4ff;
+  cursor: pointer;
+}
+
+.kana-style {
+  padding: 12px 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: #e0f0ff;       /* ▶ 青系の優しい背景 */
+  border: 1px solid #66aaff;       /* ▶ 青枠 */
+  color: #004080;                  /* ▶ 深めの青文字色 */
+  width: 100%;
+  max-width: 120px;
+  transition: 0.2s;
+}
+
+.kana-style:hover {
+  background-color: #c6e4ff;       /* ▶ ホバー時の明るい青 */
+  cursor: pointer;
+}
