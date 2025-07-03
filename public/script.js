@@ -113,3 +113,9 @@ function resetChat() {
 function openLink(url) {
   window.location.href = url;
 }
+
+// 初期ロード時に戻るボタンを非表示にする
+document.addEventListener('DOMContentLoaded', () => {
+  const backBtn = document.querySelector(".back-button");
+  if (backBtn) backBtn.style.display = "none";
+});
