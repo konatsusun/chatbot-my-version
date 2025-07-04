@@ -172,3 +172,26 @@ th {
   color: #003b5c;
   font-weight: bold;
 }
+
+/* デフォルト（PCやタブレット） */
+.avatar {
+  width: 120px;
+  height: auto;
+  border-radius: 0;
+  margin-top: 0.5rem;
+}
+
+/* スマホ画面用（幅が480px以下のとき） */
+@media screen and (max-width: 480px) {
+  .avatar {
+    margin-top: 2.5rem; /* ← スマホだけ画像を下にずらす！ */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .back-button {
+    top: 4px;
+    left: 6px;
+    font-size: 0.9rem;
+  }
+}
