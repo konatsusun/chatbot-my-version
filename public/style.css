@@ -22,9 +22,9 @@ body {
   display: flex;
   align-items: center;        /* 縦中央揃え */
   justify-content: center;    /* 横方向中央揃え */
-  gap: 1rem;                  /* 画像と文字の間隔 */
+  gap: 0;                  /* 画像と文字の間隔 */
   padding-top: 10px;
-  margin-top: 0;
+  margin-top: 2.5;
   position: relative;
 }
 
@@ -46,9 +46,9 @@ body {
 .back-button {
   position: absolute;
   top: 8px;
-  left: 12px;
+  left: 5px;
   font-size: 0.95rem;
-  color: #555;
+  color: #2c0c82;
   background: none;
   border: none;
   text-decoration: underline;
