@@ -195,3 +195,9 @@ th {
     font-size: 0.9rem;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .avatar {
+    margin-top: 3.5rem; /* ← スマホだけ画像をさらに下にずらす */
+  }
+}
