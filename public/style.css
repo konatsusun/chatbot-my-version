@@ -94,7 +94,8 @@ button:hover {
   background: #e6f1ff;
   padding: 12px;
   border-radius: 12px;
-  max-width: 80%;
+  width: 100%; /* ← max-width をやめて全幅に！ */
+  box-sizing: border-box;
 }
 
 /* 📊 表（料金表など） */
